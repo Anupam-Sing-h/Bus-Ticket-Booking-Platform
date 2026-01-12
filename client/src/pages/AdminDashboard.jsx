@@ -22,7 +22,7 @@ const AdminDashboard = () => {
     const { id, value } = e.target;
     setBusDetails((prevBusDetails) => ({
       ...prevBusDetails,
-      [id]: value.trim()
+      [id]: e.target.type === "number" ? Number(value) : value.trim()
     }));
   };
 
@@ -56,7 +56,8 @@ const AdminDashboard = () => {
           availableSeats: '',
           totalSeats: '',
           date: '',
-          busId: ''
+          busId: '',
+          UPI_ID: ''
         });
       } else {
         setErrorMessage(data.message || 'Failed to add bus details.');
