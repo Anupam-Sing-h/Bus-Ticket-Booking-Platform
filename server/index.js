@@ -32,3 +32,12 @@ app.listen(port, () => {
   console.log(`🚀 Server running on port ${port}`);
 });
 
+//CROS
+app.use(cors({
+  origin: [
+    "https://bus-ticket-booking-platform.vercel.app/" // deployed frontend
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
